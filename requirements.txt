@@ -1,0 +1,8 @@
+django
+#uncomment for ubuntu server
+#gunicorn
+numpy
+scipy
+opencv-python
+imutils
+requests
