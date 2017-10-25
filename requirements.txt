@@ -1,6 +1,6 @@
 django
 #uncomment for ubuntu server
-#gunicorn
+gunicorn
 numpy
 scipy
 opencv-python
