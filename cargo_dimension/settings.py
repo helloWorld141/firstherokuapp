@@ -25,7 +25,7 @@ SECRET_KEY = 'cg@%=pf@gxg6iiv#e0m)m+rtl*s3bud$*g33*e5icf!)o01vpt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'infinite-reef-99555.herokuapp.com']
 
 
 # Application definition
