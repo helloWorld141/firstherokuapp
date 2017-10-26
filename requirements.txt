@@ -7,3 +7,4 @@ opencv-python
 imutils
 requests
 channels
+Twisted[tls,http2]

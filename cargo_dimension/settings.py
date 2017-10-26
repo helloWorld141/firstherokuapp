@@ -56,7 +56,7 @@ ROOT_URLCONF = 'cargo_dimension.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR + '/cargo_dimension/public'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,6 +130,8 @@ CHANNEL_LAYERS = {
         'CONFIG': {
             'hosts': [('localhost', 6379)],
         },
-        'ROUTING': 'routing.channel_routing',
+        'ROUTING': 'cargo_dimension.routing.channel_routing',
     }
 }
+
+HOST = 'localhost:8000'

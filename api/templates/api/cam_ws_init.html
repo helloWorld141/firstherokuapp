@@ -1,0 +1,21 @@
+{% extends 'api/_base.html' %}
+
+{% block content %}{% endblock content %}
+
+{% block script %}
+  <script>
+    var socket = new WebSocket('ws://' + window.location.host + '/cam/');
+
+    socket.onopen = function open() {
+      console.log('Camera opened socket connection.');
+    };
+
+    socket.onmessage = function message(event) {
+    	var data = JSON.parse(event.data);
+    	console.log("Received push notification from server: ", data)
+    }
+    if (socket.readyState == WebSocket.OPEN) {
+      socket.onopen();
+    }
+  </script>
+{% endblock script %}

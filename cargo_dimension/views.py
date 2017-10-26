@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(req):
-	return HttpResponse("Server is running.")
+	return render(req, 'index.html')
