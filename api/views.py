@@ -15,6 +15,7 @@ def dims(req):
 		"image": path+ "/resource/img/2.png",
 		"width": "1"
 	}
+	print(req)
 	print('Reqest: ', req.FILES, req.POST)
 	if ( not req.FILES.get('image') or  not req.POST.get('width')):
 		return HttpResponse(content="Bad request. Please include image and width", status=400)
