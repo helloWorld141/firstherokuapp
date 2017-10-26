@@ -31,7 +31,9 @@ def dims(req):
 	return JsonResponse({"objects": res})
 
 def parse(width):
-	print(width)
+	w = width.split('\r\n')
+	print(w)
+	return w[0]
 
 #image: class 'django.core.files.uploadedfile.InMemoryUploadedFile'
 def saveImage(image):
