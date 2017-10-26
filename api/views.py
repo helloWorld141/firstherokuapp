@@ -20,14 +20,18 @@ def dims(req):
 	if ( not req.FILES.get('image') or  not req.POST.get('width')):
 		return HttpResponse(content="Bad request. Please include image and width", status=400)
 	image = req.FILES['image']
+	width = parse(req.POST['width'])
 	imgpath = saveImage(image)
 	realArgs = {
 		"image": imgpath,
-		"width": req.POST['width']
+		"width": width
 	}
 	res = calculateDims(realArgs)
 	print("Response: ", res)
 	return JsonResponse({"objects": res})
+
+def parse(width):
+	print(width)
 
 #image: class 'django.core.files.uploadedfile.InMemoryUploadedFile'
 def saveImage(image):
