@@ -1,4 +1,4 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from .utils.DimensionCalculator import calculateDims
 import os, json
 from django.views.decorators.csrf import csrf_exempt
@@ -16,6 +16,8 @@ def dims(req):
 		"width": "1"
 	}
 	print('Reqest: ', req.FILES, req.POST)
+	if ( not req.FILES.get('image') or  not req.POST.get('width')):
+		return HttpResponse(content="Bad request. Please include image and width", status=400)
 	image = req.FILES['image']
 	imgpath = saveImage(image)
 	realArgs = {
