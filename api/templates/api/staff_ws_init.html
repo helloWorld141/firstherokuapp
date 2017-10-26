@@ -4,6 +4,7 @@
 
 {% block script %}
   <script>
+    console.log('ws://' + window.location.host + '/staff/')
     var socket = new WebSocket('ws://' + window.location.host + '/staff/');
 
     socket.onopen = function open() {
