@@ -83,7 +83,7 @@ def cargo(req):
 	if req.method == 'POST':
 		try :
 			id = req.POST.get('id', '1401')
-			dimensions = req.POST.get('dimensions')
+			dimensions = json.loads(req.POST.get('dimensions'))
 			tiltable = json.loads(req.POST.get('tiltable', 'false'))
 			stackable = json.loads(req.POST.get('stackable', 'false'))
 			pieces = json.loads(req.POST.get('pieces', '1'))
