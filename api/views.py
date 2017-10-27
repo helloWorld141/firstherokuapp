@@ -104,11 +104,12 @@ def cargo(req):
 				print(req)
 				#image = req.FILES['picture']
 				#print(image)
-				r = redis.Redis(host='localhost', port=6379, db=0)
-				r.hset(settings.REDIS_KEY, "first_staff", id)
-				Group('cam').send({'text': '{"id" :"' + id + '",\
-											"take_picture": True}'})
-				return JsonResponse({'created': True})
+				#r = redis.Redis(host='localhost', port=6379, db=0)
+				#r.hset(settings.REDIS_KEY, "first_staff", id)
+				#Group('cam').send({'text': '{"id" :"' + id + '",\
+				#							"take_picture": True}'})
+				return JsonResponse({'created': True,
+										'request': req.POST})
 		except:
 			e = sys.exc_info()
 			print(e)

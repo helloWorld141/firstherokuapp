@@ -115,29 +115,16 @@
             var remark = $("#remark").val();
 
             if ($.isNumeric(length) && $.isNumeric(width)) {
+              var data = {
+                "id": $("#cargo-id").val(), 
+                "stackable": $("#stackable").hasClass("btn-primary") ? true : false,
+                "tiltable": $("#tiltable").hasClass("btn-primary") ? true : false,
+                "take_picture": false,
+                "dimensions": JSON.stringify(dimensions),
+                "remark": remark
+              };
 
-              var formData = new FormData();
-
-              formData.append('id', $("#cargo-id").val());
-              formData.append('stackable', $("#stackable").hasClass("btn-primary") ? true : false);
-              formData.append('tiltable', $("#tiltable").hasClass("btn-primary") ? true : false);
-              formData.append('take_picture', false);
-              formData.append('dimensions', JSON.stringify(dimensions));
-              formData.append('remark', remark);
-              formData.append('picture', "");
-
-              $.ajax({
-                url: "http://54.251.191.230/api/cargo" ,
-                type: 'POST',
-                data: formData,
-                success: function(data) {
-                  alert(data);
-                },
-                cache: false,
-                contentType: false,
-                processData: false
-              });
-              
+              console.log(data);
 
               this.reset();
               typeButtons.forEach(function(node) {
@@ -152,7 +139,7 @@
               formData.append('id', $("#cargo-id").val());
               formData.append('stackable', $("#stackable").hasClass("btn-primary") ? true : false);
               formData.append('tiltable', $("#tiltable").hasClass("btn-primary") ? true : false);
-              formData.append('take_picture', true);
+              formData.append('take_picture', false);
               formData.append('dimensions', JSON.stringify(dimensions));
               formData.append('remark', remark);
               formData.append('picture', document.getElementById('picture').files[0]);
@@ -170,6 +157,17 @@
                 processData: false
               });
 
+              // var data = {
+              //   "id": $("#cargo-id").val(), 
+              //   "stackable": $("#stackable").hasClass("btn-primary") ? true : false,
+              //   "tiltable": $("#tiltable").hasClass("btn-primary") ? true : false,
+              //   "take_picture": true,
+              //   "dimensions": JSON.stringify(dimensions),
+              //   "remark": remark,
+              //   "picture": document.getElementById('picture').files[0]
+              // }
+
+
               this.reset();
               typeButtons.forEach(function(node) {
                 $(node).removeClass("btn-primary");
@@ -177,9 +175,7 @@
               });
               this.classList.remove('was-validated');
             } else {
-              event.stopPropagation();
-              alert('Please take a picture of the object or enter the dimensions manually.');
-
+              //todo
             }
           }
         });
