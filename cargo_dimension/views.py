@@ -4,3 +4,5 @@ from django.conf import settings
 
 def index(req):
 	return render(req, 'index.html', {'url': settings.HOST})
+def list(req):
+	return render(req, 'list.html')

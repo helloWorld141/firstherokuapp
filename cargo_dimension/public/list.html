@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Cargo Shipment Manager</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/static/css/cropper.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-slider.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Cargo Shipment Manager</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Add Cargo</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Cargo List <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br>
+    <div class="container">
+      <h1>Scanned Cargos</h1>
+      <br>
+      <table id="tableArea" class="table table-striped table-hover"></table>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="/static/js/cropper.min.js"></script>
+    <script src="/static/js/bootstrap-slider.min.js"></script>
+    <script>
+      //Request data
+      function generateHTML(sampleJson) {
+        var sampleJson = [{ id: "1401", dims: "", stackable: null, tiltable: null, image: "", crops: "[]" }];
+        console.log(sampleJson.length);
+        //Generate HTML string
+        var ht=[];
+        ht.push('<thead> <tr>');
+        var headers =  ["ID", "Stackable", "Tiltable", "Volumne", "Shape", "# of pieces"];
+        var jsonKeys = ["id", "stackable", "tiltable", "volumne", "shape", "num"];
+        for (i=0; i<headers.length; i++) {
+          ht.push('<th scope="col">'+headers[i]+"</th>");
+        }
+        ht.push('</tr> </thead>');
+        ht.push('<tbody>');
+        for (i=0; i<sampleJson.length; i++) {
+          ht.push('<tr class="clickable-row"  data-href="">');
+          for (j=0; j<jsonKeys.length; j++) {
+            ht.push('<td>'+sampleJson[i][jsonKeys[j]]+'</td>');
+          }
+          ht.push('</tr>');
+        }
+        ht.push('</tbody>');
+        ht = ht.join("");
+        console.log(ht);
+        //Replace
+        document.getElementById('tableArea').innerHTML = ht;
+      }
+
+      function httpGetAsync(theUrl) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function() {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+              console.log(xmlHttp.responseText);
+              generateHTML(JSON.stringify(xmlHttp.responseText));
+        }
+        xmlHttp.open("GET", theUrl, true); // true for asynchronous
+        xmlHttp.send(null);
+      }
+
+      httpGetAsync("http://54.251.191.230/api/cargo");
+
+      //Web socket
+      // var socket = new WebSocket('ws://54.251.191.230/staff/');
+
+      // socket.onopen = function open() {
+      //   console.log('Staff opened socket connection.');
+      // };
+
+      // socket.onmessage = function message(event) {
+      //   var data = JSON.parse(event.data);
+      //   console.log("Received push notification from server: ", data);
+      // }
+
+      //(function() {
+        //'use strict';
+
+        // window.addEventListener('load', function() {
+        //   $('#image').cropper({
+        //     rotatable: true,
+        //     zoomable: false,
+        //     crop: function(e) {}
+        //   });
+
+        //   $('#rotate-degree').slider();
+        //   $('#rotate-degree').on('slide', function(slideEvent) {
+        //     // console.log(slideEvent.value);
+        //     $('#image').cropper('rotateTo', slideEvent.value);
+        //   });
+        // });
+
+        // jQuery(document).ready(function($) {
+        //   $(".clickable-row").click(function() {
+        //     window.location = $(this).data("href");
+        //   })
+        // })
+      //})();
+    </script>
+  </body>
+</html>

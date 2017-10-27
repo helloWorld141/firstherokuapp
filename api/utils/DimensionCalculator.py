@@ -171,7 +171,7 @@ def calculateDims(imagePath, objHeight):
 		crop.append(pair)
 
 	print(crop)
-	result = {"crop": crop, "width": dimA, "height": dimB}
+	result = {"crop": crop, "width": dimA, "length": dimB}
 	return result
 
 if __name__ == "__main__":

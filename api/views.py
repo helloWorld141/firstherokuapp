@@ -113,10 +113,14 @@ def picture(req):
 		if ( not req.FILES.get('image') or  not req.POST.get('id')):
 			return HttpResponse(content="Bad request. Please include image and id", status=400)
 		image = req.FILES['image']
+		print(type(image))
 		id = parse(req.POST['id'])
-		imgpath = saveImage(id, image)
-		cargo = list(Cargo.objects.filter(id=id).values())[0]
+		cargo = Cargo.objects.filter(id=id)
+		#cargo['image'].save(image.name, image)
+		cargo = list(cargo.values())[0]
 		print(cargo)
+		imgpath = saveImage(id, image)
+		
 		height = json.loads(cargo['dims'])[0]
 		#TODO: change to real calculateDims
 		res = calculateDims(imgpath, height)
@@ -131,6 +135,9 @@ def calculateDims2(picture):
 	return {"crop" : [[0,1],[1,1],[1,0],[0,0]],
 			"width": 1,
 			"height": 1}
+@csrf_exempt
+def list(req):
+	render()
 
 		
 		
