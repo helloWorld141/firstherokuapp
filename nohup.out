@@ -1,0 +1,1254 @@
+2017-10-26 17:44:07,407 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-26 17:44:07,408 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-26 17:44:07,408 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-26 17:44:07,409 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-26 17:44:07,410 - INFO - server - HTTP/2 support enabled
+2017-10-26 17:44:07,410 - INFO - server - Using busy-loop synchronous mode on channel layer
+2017-10-26 17:44:07,410 - INFO - server - Listening on endpoint tcp:port=8000:interface=127.0.0.1
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Internal Server Error: /api/dims
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 28, in dims
+    imgpath = saveImage(image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 52, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/image'
+Internal Server Error: /api/dims
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 28, in dims
+    imgpath = saveImage(image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 52, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/image'
+Internal Server Error: /api/dims
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 28, in dims
+    imgpath = saveImage(image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 52, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/image'
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 26, 2017 - 17:44:07
+Django version 1.11.6, using settings 'cargo_dimension.settings'
+Starting Channels development server at http://127.0.0.1:8000/
+Channel layer default (asgi_redis.core.RedisChannelLayer)
+Quit the server with CONTROL-C.
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+<AsgiRequest: POST '/api/dims'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: 2.png ()>]}> <QueryDict: {'width': ['1']}>
+['1']
+Response:  [{'botright': {'y': 228.0, 'x': 154.0}, 'dims': [0.5675841647694937, 1.0], 'botleft': {'y': 275.0, 'x': 86.0}, 'topright': {'y': 189.0, 'x': 128.0}, 'topleft': {'y': 236.0, 'x': 59.0}}, {'botright': {'y': 422.0, 'x': 348.0}, 'dims': [2.016127693089283, 2.016127693089283], 'botleft': {'y': 388.0, 'x': 184.0}, 'topright': {'y': 258.0, 'x': 382.0}, 'topleft': {'y': 224.0, 'x': 218.0}}, {'botright': {'y': 191.0, 'x': 396.0}, 'dims': [1.968461712662565, 1.962342452464049], 'botleft': {'y': 189.0, 'x': 233.0}, 'topright': {'y': 28.0, 'x': 399.0}, 'topleft': {'y': 25.0, 'x': 236.0}}, {'botright': {'y': 401.0, 'x': 502.0}, 'dims': [1.1376069666531554, 2.6388827612944974], 'botleft': {'y': 228.0, 'x': 368.0}, 'topright': {'y': 344.0, 'x': 577.0}, 'topleft': {'y': 170.0, 'x': 443.0}}]
+User group connected:  staff
+<AsgiRequest: POST '/api/dims'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: 2.png ()>]}> <QueryDict: {'width': ['1']}>
+['1']
+Response:  [{'botright': {'y': 228.0, 'x': 154.0}, 'dims': [0.5675841647694937, 1.0], 'botleft': {'y': 275.0, 'x': 86.0}, 'topright': {'y': 189.0, 'x': 128.0}, 'topleft': {'y': 236.0, 'x': 59.0}}, {'botright': {'y': 422.0, 'x': 348.0}, 'dims': [2.016127693089283, 2.016127693089283], 'botleft': {'y': 388.0, 'x': 184.0}, 'topright': {'y': 258.0, 'x': 382.0}, 'topleft': {'y': 224.0, 'x': 218.0}}, {'botright': {'y': 191.0, 'x': 396.0}, 'dims': [1.968461712662565, 1.962342452464049], 'botleft': {'y': 189.0, 'x': 233.0}, 'topright': {'y': 28.0, 'x': 399.0}, 'topleft': {'y': 25.0, 'x': 236.0}}, {'botright': {'y': 401.0, 'x': 502.0}, 'dims': [1.1376069666531554, 2.6388827612944974], 'botleft': {'y': 228.0, 'x': 368.0}, 'topright': {'y': 344.0, 'x': 577.0}, 'topleft': {'y': 170.0, 'x': 443.0}}]
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+<AsgiRequest: POST '/api/dims'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: 2.png ()>]}> <QueryDict: {'width': ['1']}>
+['1']
+Response:  [{'botright': {'y': 228.0, 'x': 154.0}, 'dims': [0.5675841647694937, 1.0], 'botleft': {'y': 275.0, 'x': 86.0}, 'topright': {'y': 189.0, 'x': 128.0}, 'topleft': {'y': 236.0, 'x': 59.0}}, {'botright': {'y': 422.0, 'x': 348.0}, 'dims': [2.016127693089283, 2.016127693089283], 'botleft': {'y': 388.0, 'x': 184.0}, 'topright': {'y': 258.0, 'x': 382.0}, 'topleft': {'y': 224.0, 'x': 218.0}}, {'botright': {'y': 191.0, 'x': 396.0}, 'dims': [1.968461712662565, 1.962342452464049], 'botleft': {'y': 189.0, 'x': 233.0}, 'topright': {'y': 28.0, 'x': 399.0}, 'topleft': {'y': 25.0, 'x': 236.0}}, {'botright': {'y': 401.0, 'x': 502.0}, 'dims': [1.1376069666531554, 2.6388827612944974], 'botleft': {'y': 228.0, 'x': 368.0}, 'topright': {'y': 344.0, 'x': 577.0}, 'topleft': {'y': 170.0, 'x': 443.0}}]
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+<AsgiRequest: POST '/api/dims'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'width': ['1\r\nwidth: 1']}>
+['1', 'width: 1']
+User group connected:  staff
+<AsgiRequest: POST '/api/dims'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'width': ['1\r\nwidth: 1']}>
+['1', 'width: 1']
+<AsgiRequest: POST '/api/dims'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'width': ['1\r\nwidth: 1']}>
+['1', 'width: 1']
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+2017-10-27 07:34:13,068 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 07:34:13,070 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 07:34:13,071 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 07:34:13,071 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 07:34:13,072 - INFO - server - HTTP/2 support enabled
+2017-10-27 07:34:13,072 - INFO - server - Using busy-loop synchronous mode on channel layer
+2017-10-27 07:34:13,072 - INFO - server - Listening on endpoint tcp:port=8000:interface=127.0.0.1
+Internal Server Error: /api/cargo
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 79, in cargo
+    cargo_list = Cargo.objects.all().value()
+AttributeError: 'QuerySet' object has no attribute 'value'
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 27, 2017 - 07:34:13
+Django version 1.11.6, using settings 'cargo_dimension.settings'
+Starting Channels development server at http://127.0.0.1:8000/
+Channel layer default (asgi_redis.core.RedisChannelLayer)
+Quit the server with CONTROL-C.
+User group connected:  staff
+2017-10-27 08:16:51,321 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 08:16:51,322 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 08:16:51,322 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 08:16:51,322 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 08:16:51,323 - INFO - server - HTTP/2 support enabled
+2017-10-27 08:16:51,323 - INFO - server - Using busy-loop synchronous mode on channel layer
+2017-10-27 08:16:51,323 - INFO - server - Listening on endpoint tcp:port=8000:interface=127.0.0.1
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 27, 2017 - 08:16:51
+Django version 1.11.6, using settings 'cargo_dimension.settings'
+Starting Channels development server at http://127.0.0.1:8000/
+Channel layer default (asgi_redis.core.RedisChannelLayer)
+Quit the server with CONTROL-C.
+User group connected:  staff
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['1\r\nid: 1']}>
+['1', 'id: 1']
+{'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'image': '', 'id': '1', 'tiltable': True}
+CIRCLE
+[[0.0, 162.0], [331.0, 273.0], [298.0, 371.0], [-32.0, 261.0]]
+Response:  {'width': 11378.433866969566, 'height': 38228.60063676148, 'crop': [[0.0, 162.0], [331.0, 273.0], [298.0, 371.0], [-32.0, 261.0]]}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['1\r\nid: 1']}>
+['1', 'id: 1']
+{'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'image': '', 'id': '1', 'tiltable': True}
+CIRCLE
+[[53.0, 105.0], [73.0, 105.0], [73.0, 229.0], [53.0, 229.0]]
+Response:  {'width': 13602.800000000001, 'height': 2194.0, 'crop': [[53.0, 105.0], [73.0, 105.0], [73.0, 229.0], [53.0, 229.0]]}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['1\r\nid: 1']}>
+['1', 'id: 1']
+{'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'image': '', 'id': '1', 'tiltable': True}
+CIRCLE
+[[62.0, 289.0], [66.0, 288.0], [69.0, 398.0], [66.0, 398.0]]
+Response:  {'width': 12018.28462073519, 'height': 387.8480694808213, 'crop': [[62.0, 289.0], [66.0, 288.0], [69.0, 398.0], [66.0, 398.0]]}
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+2017-10-27 09:15:29,134 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 09:15:29,136 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 09:15:29,136 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 09:15:29,136 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 09:15:29,137 - INFO - server - HTTP/2 support enabled
+2017-10-27 09:15:29,137 - INFO - server - Using busy-loop synchronous mode on channel layer
+2017-10-27 09:15:29,137 - INFO - server - Listening on endpoint tcp:port=8000:interface=127.0.0.1
+Internal Server Error: /api/cargo
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 81, in cargo
+    return JsonResponse(list(cargo_list), safe=False)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 140, in list
+    render()
+TypeError: render() missing 2 required positional arguments: 'request' and 'template_name'
+Internal Server Error: /api/cargo
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 81, in cargo
+    return JsonResponse(list(cargo_list), safe=False)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 140, in list
+    render()
+TypeError: render() missing 2 required positional arguments: 'request' and 'template_name'
+Internal Server Error: /api/cargo
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 81, in cargo
+    return JsonResponse(list(cargo_list), safe=False)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 140, in list
+    render()
+TypeError: render() missing 2 required positional arguments: 'request' and 'template_name'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 120, in picture
+    cargo = list(cargo.values())[0]
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 140, in list
+    render()
+TypeError: render() missing 2 required positional arguments: 'request' and 'template_name'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 120, in picture
+    cargo = list(cargo.values())[0]
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 140, in list
+    render()
+TypeError: render() missing 2 required positional arguments: 'request' and 'template_name'
+Internal Server Error: /api/cargo
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 81, in cargo
+    return JsonResponse(list(cargo_list), safe=False)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 140, in list
+    render()
+TypeError: render() missing 2 required positional arguments: 'request' and 'template_name'
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 27, 2017 - 09:15:29
+Django version 1.11.6, using settings 'cargo_dimension.settings'
+Starting Channels development server at http://127.0.0.1:8000/
+Channel layer default (asgi_redis.core.RedisChannelLayer)
+Quit the server with CONTROL-C.
+User group connected:  staff
+User group connected:  staff
+TRUO None True True True
+<class 'django.db.utils.IntegrityError'>
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+5 [1,2,3] True True False
+not taking picture
+<class 'django.db.utils.IntegrityError'>
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['1\r\nid: 1']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['1', 'id: 1']
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['1\r\nid: 1']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['1', 'id: 1']
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+2017-10-27 10:15:49,475 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 10:15:49,476 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 10:15:49,477 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 10:15:49,478 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 10:15:49,478 - INFO - server - HTTP/2 support enabled
+2017-10-27 10:15:49,479 - INFO - server - Using busy-loop synchronous mode on channel layer
+2017-10-27 10:15:49,479 - INFO - server - Listening on endpoint tcp:port=8000:interface=127.0.0.1
+Not Found: /favicon.ico
+Not Found: /hndUnblock.cgi
+Not Found: /tmUnblock.cgi
+Not Found: /getcfg.php
+Not Found: /getcfg.php
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 27, 2017 - 10:15:49
+Django version 1.11.6, using settings 'cargo_dimension.settings'
+Starting Channels development server at http://127.0.0.1:8000/
+Channel layer default (asgi_redis.core.RedisChannelLayer)
+Quit the server with CONTROL-C.
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+(<class 'TypeError'>, TypeError("the JSON object must be str, not 'int'",), <traceback object at 0x7fd3e18547c8>)
+User group connected:  staff
+(<class 'TypeError'>, TypeError("the JSON object must be str, not 'int'",), <traceback object at 0x7fd3e1858ac8>)
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+2017-10-27 12:33:09,351 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 12:33:09,353 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 12:33:09,353 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 12:33:09,354 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 12:33:09,354 - INFO - server - HTTP/2 support enabled
+2017-10-27 12:33:09,355 - INFO - server - Using busy-loop synchronous mode on channel layer
+2017-10-27 12:33:09,355 - INFO - server - Listening on endpoint tcp:port=8000:interface=127.0.0.1
+Not Found: /cargo
+Invalid HTTP_HOST header: '172.31.3.27'. You may need to add '172.31.3.27' to ALLOWED_HOSTS.
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 125, in picture
+    height = json.loads(cargo['dims'])[0]
+  File "/usr/lib/python3.5/json/__init__.py", line 312, in loads
+    s.__class__.__name__))
+TypeError: the JSON object must be str, not 'NoneType'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 27, 2017 - 12:33:09
+Django version 1.11.6, using settings 'cargo_dimension.settings'
+Starting Channels development server at http://127.0.0.1:8000/
+Channel layer default (asgi_redis.core.RedisChannelLayer)
+Quit the server with CONTROL-C.
+User group connected:  staff
+jhjhkjh None True True True 1
+hieu None False False True 1
+User group connected:  staff
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['1\r\nid: 1']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['1', 'id: 1']
+{'stackable': True, 'tiltable': False, 'image': '', 'dims': None, 'id': '1', 'pieces': 1, 'crops': ''}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'stackable': True, 'tiltable': False, 'image': '', 'dims': '[1,2,3]', 'id': '4', 'pieces': 2, 'crops': ''}
+User group connected:  staff
+2017-10-27 12:53:32,324 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 12:53:32,325 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 12:53:32,326 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 12:53:32,326 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 12:53:32,327 - INFO - server - HTTP/2 support enabled
+2017-10-27 12:53:32,327 - INFO - server - Using busy-loop synchronous mode on channel layer
+2017-10-27 12:53:32,327 - INFO - server - Listening on endpoint tcp:port=8000:interface=127.0.0.1
+Not Found: /favicon.ico
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 27, 2017 - 12:53:32
+Django version 1.11.6, using settings 'cargo_dimension.settings'
+Starting Channels development server at http://127.0.0.1:8000/
+Channel layer default (asgi_redis.core.RedisChannelLayer)
+Quit the server with CONTROL-C.
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+Sjrbf None False True False 1
+not taking picture
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+User group connected:  staff
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'pieces': 2, 'id': '4', 'tiltable': False, 'crops': '', 'stackable': True, 'dims': '[1,2,3]', 'image': ''}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'pieces': 2, 'id': '4', 'tiltable': False, 'crops': '', 'stackable': True, 'dims': '[1,2,3]', 'image': ''}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'pieces': 2, 'id': '4', 'tiltable': False, 'crops': '', 'stackable': True, 'dims': '[1,2,3]', 'image': ''}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'pieces': 2, 'id': '4', 'tiltable': False, 'crops': '', 'stackable': True, 'dims': '[1,2,3]', 'image': ''}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'pieces': 2, 'id': '4', 'tiltable': False, 'crops': '', 'stackable': True, 'dims': '[1,2,3]', 'image': ''}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'pieces': 2, 'id': '4', 'tiltable': False, 'crops': '', 'stackable': True, 'dims': '[1,2,3]', 'image': ''}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'pieces': 2, 'id': '4', 'tiltable': False, 'crops': '', 'stackable': True, 'dims': '[1,2,3]', 'image': ''}
+234 None True True True 1
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'pieces': 2, 'id': '4', 'tiltable': False, 'crops': '', 'stackable': True, 'dims': '[1,2,3]', 'image': ''}
+2017-10-27 13:07:19,711 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:07:19,715 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:07:19,715 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:07:19,719 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:07:19,720 - INFO - server - HTTP/2 support enabled
+2017-10-27 13:07:19,720 - INFO - server - Using busy-loop synchronous mode on channel layer
+2017-10-27 13:07:19,720 - INFO - server - Listening on endpoint tcp:port=8000:interface=127.0.0.1
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 27, 2017 - 13:07:19
+Django version 1.11.6, using settings 'cargo_dimension.settings'
+Starting Channels development server at http://127.0.0.1:8000/
+Channel layer default (asgi_redis.core.RedisChannelLayer)
+Quit the server with CONTROL-C.
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'dims': '[1,2,3]', 'id': '4', 'crops': '', 'pieces': 2, 'stackable': True, 'tiltable': False}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'dims': '[1,2,3]', 'id': '4', 'crops': '', 'pieces': 2, 'stackable': True, 'tiltable': False}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'dims': '[1,2,3]', 'id': '4', 'crops': '', 'pieces': 2, 'stackable': True, 'tiltable': False}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'dims': '[1,2,3]', 'id': '4', 'crops': '', 'pieces': 2, 'stackable': True, 'tiltable': False}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'dims': '[1,2,3]', 'id': '4', 'crops': '', 'pieces': 2, 'stackable': True, 'tiltable': False}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'dims': '[1,2,3]', 'id': '4', 'crops': '', 'pieces': 2, 'stackable': True, 'tiltable': False}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'dims': '[1,2,3]', 'id': '4', 'crops': '', 'pieces': 2, 'stackable': True, 'tiltable': False}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'dims': '[1,2,3]', 'id': '4', 'crops': '', 'pieces': 2, 'stackable': True, 'tiltable': False}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'dims': '[1,2,3]', 'id': '4', 'crops': '', 'pieces': 2, 'stackable': True, 'tiltable': False}
+2017-10-27 13:08:12,595 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:08:12,597 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:08:12,603 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:08:12,603 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:08:12,604 - INFO - server - HTTP/2 support enabled
+2017-10-27 13:08:12,604 - INFO - server - Using busy-loop synchronous mode on channel layer
+2017-10-27 13:08:12,604 - INFO - server - Listening on endpoint tcp:port=8000:interface=127.0.0.1
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 27, 2017 - 13:08:12
+Django version 1.11.6, using settings 'cargo_dimension.settings'
+Starting Channels development server at http://127.0.0.1:8000/
+Channel layer default (asgi_redis.core.RedisChannelLayer)
+Quit the server with CONTROL-C.
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'dims': '[1,2,3]', 'image': '', 'pieces': 2, 'id': '4', 'crops': '', 'tiltable': False, 'stackable': True}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'dims': '[1,2,3]', 'image': '', 'pieces': 2, 'id': '4', 'crops': '', 'tiltable': False, 'stackable': True}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'dims': '[1,2,3]', 'image': '', 'pieces': 2, 'id': '4', 'crops': '', 'tiltable': False, 'stackable': True}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'dims': '[1,2,3]', 'image': '', 'pieces': 2, 'id': '4', 'crops': '', 'tiltable': False, 'stackable': True}
+2017-10-27 13:08:48,139 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:08:48,140 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:08:48,143 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:08:48,147 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:08:48,147 - INFO - server - HTTP/2 support enabled
+2017-10-27 13:08:48,148 - INFO - server - Using busy-loop synchronous mode on channel layer
+2017-10-27 13:08:48,148 - INFO - server - Listening on endpoint tcp:port=8000:interface=127.0.0.1
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
+Internal Server Error: /api/picture
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.5/dist-packages/channels/handler.py", line 243, in process_exception_by_middleware
+    return super(AsgiHandler, self).process_exception_by_middleware(exception, request)
+  File "/usr/local/lib/python3.5/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.5/dist-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 123, in picture
+    imgpath = saveImage(id, image)
+  File "/home/ubuntu/firstherokuapp/api/views.py", line 59, in saveImage
+    with open(imgpath, 'wb+') as f:
+PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
