@@ -97,7 +97,7 @@ def cargo(req):
 			print(id, dimensions, tiltable, stackable, take_picture, pieces)
 			if not take_picture:
 				print('not taking pictures')
-				Cargo.objects.create(id=id, tiltable=tiltable, stackable=stackable, pieces=pieces)
+				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
 				return JsonResponse({'created': True})
 			else:
 				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
