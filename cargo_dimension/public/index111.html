@@ -65,16 +65,10 @@
           <label for="remark" class="col-sm-2 col-form-label">Remark</label>
           <div class="col"><input type="text" class="form-control" id="remark" placeholder="Enter remark (optional)"></div>
         </div>
-        <div class="form-group row">
-          <label for="remark" class="col-sm-2 col-form-label">Picture</label>
-          <div class="col">
-            <input id="picture" type="file" accept="image/*" capture="camera">
-          </div>
-        </div>
         <small id="dimensionHelp" class="form-text text-muted">Leave the width and length blank to use the cameras for automated dimension measurement.</small>
         <br>
         <br>
-        <button id="submit-button" type="submit" class="btn btn-primary btn-lg btn-block">Add new cargo!</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Add new cargo!</button>
       </form>
     </div>
     <br>
@@ -98,12 +92,6 @@
       }
 
       window.addEventListener('load', function() {
-
-      $("#picture").change(function(e) {
-        console.log(e);
-        console.log(e.originalEvent.srcElement.files);
-      });
-
         var form = document.getElementById('cargo-form');
         form.addEventListener('submit', function(event) {
           event.preventDefault();
@@ -114,59 +102,33 @@
             var height = $("#height").val();
             var length = $("#length").val();
             var width = $("#width").val();
-            var dimensions = [height, width, length];
             var takePicture = (!$.isNumeric(width) || !$.isNumeric(length));
-            var picture = $("#picture").val();
+
             var remark = $("#remark").val();
 
-            if ($.isNumeric(length) && $.isNumeric(width)) {
-              var data = {
-                "id": $("#cargo-id").val(), 
-                "stackable": $("#stackable").hasClass("btn-primary") ? true : false,
-                "tiltable": $("#tiltable").hasClass("btn-primary") ? true : false,
-                "take_picture": false,
-                "dimensions": JSON.stringify(dimensions),
-                "remark": remark
-              };
+            var url = $(form).attr('action');
 
+            var data = {
+              "id": $("#cargo-id").val(), 
+              "stackable": $("#stackable").hasClass("btn-primary") ? true : false,
+              "tiltable": $("#tiltable").hasClass("btn-primary") ? true : false,
+              "take_picture": takePicture,
+              "dimensions": JSON.stringify([height, width, length]),
+              "remark": remark
+            };
+
+            console.log(data);
+
+            $.post("http://54.251.191.230/api/cargo", data, function(data) {
               console.log(data);
+            });
 
-              $.post("http://54.251.191.230/api/cargo", data, function(data) {
-                console.log(data);
-              });
-
-              this.reset();
-              typeButtons.forEach(function(node) {
-                $(node).removeClass("btn-primary");
-                $(node).addClass("btn-outline-secondary");
-              });
-              form.classList.remove('was-validated');
-            } else if (picture !== "") {
-              var data = {
-                "id": $("#cargo-id").val(), 
-                "stackable": $("#stackable").hasClass("btn-primary") ? true : false,
-                "tiltable": $("#tiltable").hasClass("btn-primary") ? true : false,
-                "take_picture": true,
-                "dimensions": JSON.stringify(dimensions),
-                "remark": remark,
-                "picture": document.getElementById('picture').files[0]
-              }
-
-              console.log(data);
-
-              $.post("http://54.251.191.230/api/cargo", data, function(data) {
-                console.log(data);
-              });
-
-              this.reset();
-              typeButtons.forEach(function(node) {
-                $(node).removeClass("btn-primary");
-                $(node).addClass("btn-outline-secondary");
-              });
-              form.classList.remove('was-validated');
-            } else {
-
-            }
+            this.reset();
+            typeButtons.forEach(function(node) {
+              $(node).removeClass("btn-primary");
+              $(node).addClass("btn-outline-secondary");
+            });
+            form.classList.remove('was-validated');
           }
         }, false);
 
