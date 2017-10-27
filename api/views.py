@@ -82,7 +82,7 @@ def cargo(req):
 			return JsonResponse(list(cargo_list), safe=False)
 	if req.method == 'POST':
 		try :
-			print(req)
+			print(req.FILES)
 			id = req.POST.get('id', '1401')
 			print(id)
 			dimensions = json.loads(req.POST.get('dimensions'))
