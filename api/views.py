@@ -96,19 +96,20 @@ def cargo(req):
 			take_picture = json.loads(req.POST.get('take_picture', 'false'))
 			print(id, dimensions, tiltable, stackable, take_picture, pieces)
 			if not take_picture:
-				print('not taking picture')
-				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
+				print('not taking pictures')
+				Cargo.objects.create(id=id, tiltable=tiltable, stackable=stackable, pieces=pieces)
 				return JsonResponse({'created': True})
 			else:
 				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
 				print(req)
 				#image = req.FILES['picture']
 				#print(image)
-				r = redis.Redis(host='localhost', port=6379, db=0)
-				r.hset(settings.REDIS_KEY, "first_staff", id)
-				Group('cam').send({'text': '{"id" :"' + id + '",\
-											"take_picture": True}'})
-				return JsonResponse({'created': True, 'request': req.POST})
+				#r = redis.Redis(host='localhost', port=6379, db=0)
+				#r.hset(settings.REDIS_KEY, "first_staff", id)
+				#Group('cam').send({'text': '{"id" :"' + id + '",\
+				#							"take_picture": True}'})
+				return JsonResponse({'created': True,
+										'request': req.POST})
 		except:
 			e = sys.exc_info()
 			print(e)
