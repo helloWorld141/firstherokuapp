@@ -111,7 +111,7 @@ def cargo(req):
 				#Group('cam').send({'text': '{"id" :"' + id + '",\
 				#							"take_picture": True}'})
 				res = calculateDims(imgpath, height)
-				print(res)
+				print("Result", res)
 				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
 				return JsonResponse({'created': True,
 										'request': req.POST})
