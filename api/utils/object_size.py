@@ -34,17 +34,19 @@ camHeight = 110.7
 objHeight = args["objHeight"]
 
 def process_image(imagePath, objHeight):
-	width = 122.6
+	width = 120.6
 	camHeight = 110.7
 	image = cv2.imread(imagePath)
-	image = cv2.resize(image, (600, 600))
-	image = image[0:400, 50:599]
+	print(image.shape)
+	image = cv2.resize(image, (600, int(image.shape[0] / image.shape[1] * 600)))
+	print(image.shape)
+	image = image[0: int( image.shape[0]), 10:560]
 	# load the image, convert it to grayscale, and blur it slightly
 
 	# crop the image
 	# image = image[0:300, 0:599]
-	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-	gray = cv2.GaussianBlur(gray, (7, 7), 0)
+	# gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+	gray = cv2.GaussianBlur(image, (7, 7), 0)
 
 	# perform edge detection, then perform a dilation + erosion to
 	# close gaps in between object edges
@@ -65,6 +67,8 @@ def process_image(imagePath, objHeight):
 
 	best_contour = cnts[0]	
 	best_contour_area = cv2.contourArea(best_contour)
+	orig = image.copy()	
+
 
 	# find the biggest contour
 	for c in cnts:
@@ -72,6 +76,66 @@ def process_image(imagePath, objHeight):
 		if(next_contour_area > best_contour_area):
 			best_contour = c
 			best_contour_area = next_contour_area 
+
+	# for c in cnts:
+	# 	box = cv2.minAreaRect(c)
+	# 	box = cv2.cv.BoxPoints(box) if imutils.is_cv2() else cv2.boxPoints(box)
+	# 	box = np.array(box, dtype="int")
+	# 	box = perspective.order_points(box)
+	# 	(tl, tr, br, bl) = box
+	# 	(tltrX, tltrY) = midpoint(tl, tr)
+	# 	(blbrX, blbrY) = midpoint(bl, br)
+
+	# 	# compute the midpoint between the top-left and top-right points,
+	# 	# followed by the midpoint between the top-righ and bottom-right
+	# 	(tlblX, tlblY) = midpoint(tl, bl)
+	# 	(trbrX, trbrY) = midpoint(tr, br)
+
+	# 	# draw the midpoints on the image
+	# 	cv2.circle(orig, (int(tltrX), int(tltrY)), 5, (255, 0, 0), -1)
+	# 	cv2.circle(orig, (int(blbrX), int(blbrY)), 5, (255, 0, 0), -1)
+	# 	cv2.circle(orig, (int(tlblX), int(tlblY)), 5, (255, 0, 0), -1)
+	# 	cv2.circle(orig, (int(trbrX), int(trbrY)), 5, (255, 0, 0), -1)
+
+	# 	# draw lines between the midpoints
+	# 	cv2.line(orig, (int(tltrX), int(tltrY)), (int(blbrX), int(blbrY)),
+	# 		(255, 0, 255), 2)
+	# 	cv2.line(orig, (int(tlblX), int(tlblY)), (int(trbrX), int(trbrY)),
+	# 		(255, 0, 255), 2)
+
+	# 	# print(orig)
+	# 	# compute the Euclidean distance between the midpoints
+	# 	dA = dist.euclidean((tltrX, tltrY), (blbrX, blbrY)) / dist.euclidean((0, 0), (0, 599)) * width
+	# 	dB = dist.euclidean((tlblX, tlblY), (trbrX, trbrY)) / dist.euclidean((0, 0), (0, 599)) * width
+
+	# 	print("width")
+	# 	print(dA)
+	# 	print("height ")
+	# 	print(dB)
+	# 	# if the pixels per metric has not been initialized, then
+	# 	# compute it as the ratio of pixels to supplied metric
+	# 	# (in this case, inches)
+	# 	# if pixelsPerMetric is None:
+	# 	# 	args["height"]
+	# 	# 	frameWidth = image.shape[1];
+	# 	# 	pixelsPerMetric = frameWidth / args["width"]
+	# 	# 	dimA = 
+
+	# 	# compute the size of the object
+
+	# 	# dimA = dA / pixelsPerMetric
+	# 	# dimB = dB / pixelsPerMetric
+	# 	dimA = dA * (camHeight - objHeight) / (camHeight)
+	# 	dimB = dB * (camHeight - objHeight) / (camHeight)
+
+	# 	# draw the object sizes on the image
+	# 	cv2.putText(orig, "{:.1f}in".format(dimB),
+	# 	(int(tltrX - 15), int(tltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX,
+	# 	0.65, (255, 255, 255), 2)
+		
+	# 	cv2.putText(orig, "{:.1f}in".format(dimA),
+	# 	(int(trbrX + 10), int(trbrY)), cv2.FONT_HERSHEY_SIMPLEX,
+	# 	0.65, (255, 255, 255), 2)
 
 
 	# loop over the contours individually
@@ -83,7 +147,6 @@ def process_image(imagePath, objHeight):
 
 
 	# compute the rotated bounding box of the contour
-	orig = image.copy()	
 	box = cv2.minAreaRect(best_contour)
 	box = cv2.cv.BoxPoints(box) if imutils.is_cv2() else cv2.boxPoints(box)
 	box = np.array(box, dtype="int")
@@ -102,12 +165,14 @@ def process_image(imagePath, objHeight):
 	approx = cv2.approxPolyDP(best_contour, 0.04 * peri, True)
 	if(len(approx) == 4):
 		print("RECTANGLE")
+		type = "CUBOID"
 		# loop over the original points and draw them
 		for (x, y) in box:
 			cv2.circle(orig, (int(x), int(y)), 5, (0, 0, 255), -1)
 			cv2.drawContours(orig, [box.astype("int")], -1, (0, 255, 0), 2)
 	else:
 		print("CIRCLE")
+		type = "CYLINDRICAL"
 		(x,y),radius = cv2.minEnclosingCircle(c)
 		center = (int(x),int(y))
 		radius = int(radius)
@@ -137,10 +202,15 @@ def process_image(imagePath, objHeight):
 	cv2.line(orig, (int(tlblX), int(tlblY)), (int(trbrX), int(trbrY)),
 		(255, 0, 255), 2)
 
+	# print(orig)
 	# compute the Euclidean distance between the midpoints
-	dA = dist.euclidean((tltrX, tltrY), (blbrX, blbrY))
-	dB = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
+	dA = dist.euclidean((tltrX, tltrY), (blbrX, blbrY)) / dist.euclidean((0, 0), (0, 599)) * width
+	dB = dist.euclidean((tlblX, tlblY), (trbrX, trbrY)) / dist.euclidean((0, 0), (0, 599)) * width
 
+	print("width")
+	print(dA)
+	print("height ")
+	print(dB)
 	# if the pixels per metric has not been initialized, then
 	# compute it as the ratio of pixels to supplied metric
 	# (in this case, inches)
@@ -154,8 +224,8 @@ def process_image(imagePath, objHeight):
 
 	# dimA = dA / pixelsPerMetric
 	# dimB = dB / pixelsPerMetric
-	dimA = dA * (camHeight - objHeight) / (objHeight)
-	dimB = dB * (camHeight - objHeight) / (objHeight)
+	dimA = dA * (camHeight - objHeight) / (camHeight)
+	dimB = dB * (camHeight - objHeight) / (camHeight)
 
 	# draw the object sizes on the image
 	cv2.putText(orig, "{:.1f}in".format(dimB),
@@ -166,10 +236,11 @@ def process_image(imagePath, objHeight):
 		0.65, (255, 255, 255), 2)
 	# cv2.namedWindow('image', cv2.WINDOW_NORMAL)
 	# cv2.resizeWindow('image', 600, 600)
+	print(orig.shape)
 	# show the output image
 	cv2.imshow("Image", orig)
 	cv2.waitKey(0)
-	result = {"crop": list(box), "width": dimA, "height": dimB}
+	result = {"crop": list(box), "width": dimA, "height": dimB, "type": type}
 	return result
 
 imagePath = args["image"]
