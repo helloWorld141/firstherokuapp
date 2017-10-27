@@ -153,8 +153,9 @@
               console.log(data);
 
               //var socket = new WebSocket('ws://' + window.location.host + '/staff/');
-
-              $.post("http://54.251.191.230/api/cargo", data, function(data) {
+              var url = "http://54.251.191.230/api/cargo";
+              var local = "http://localhost:8000/api/cargo";
+              $.post(local, data, function(data) {
                 console.log(data);
               });
 

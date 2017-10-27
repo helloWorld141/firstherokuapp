@@ -85,7 +85,7 @@ def cargo(req):
 			dimensions = req.POST.get('dimensions')
 			tiltable = json.loads(req.POST.get('tiltable', 'false'))
 			stackable = json.loads(req.POST.get('stackable', 'false'))
-			pieces = json.loads(req.POST.get('pieces', 1))
+			pieces = json.loads(req.POST.get('pieces', '1'))
 			take_picture = json.loads(req.POST.get('take_picture', 'false'))
 			print(id, dimensions, tiltable, stackable, take_picture, pieces)
 			if not take_picture:
