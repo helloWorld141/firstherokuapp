@@ -161,9 +161,17 @@ def calculateDims(imagePath, objHeight):
 	# cv2.namedWindow('image', cv2.WINDOW_NORMAL)
 	# cv2.resizeWindow('image', 600, 600)
 	# show the output image
-	cv2.imshow("Image", orig)
-	cv2.waitKey(0)
-	result = {"crop": list(box), "width": dimA, "height": dimB}
+	#cv2.imshow("Image", orig)
+	#cv2.waitKey(0)
+	crop = []
+	for p in list(box):
+		pair = []
+		for number in list(p):
+			pair.append(float(number))
+		crop.append(pair)
+
+	print(crop)
+	result = {"crop": crop, "width": dimA, "height": dimB}
 	return result
 
 if __name__ == "__main__":

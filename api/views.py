@@ -54,8 +54,8 @@ def parse(width):
 	return w[0]
 
 #image: class 'django.core.files.uploadedfile.InMemoryUploadedFile'
-def saveImage(image):
-	imgpath = path+ "/resource/img/" + image.name
+def saveImage(id, image):
+	imgpath = path+ "/resource/img/" + id
 	with open(imgpath, 'wb+') as f:
 		for chunk in image.chunks():
 			f.write(chunk)
@@ -73,10 +73,11 @@ def cargo(req):
 		#TODO: get one cargo
 		if req.GET.get('id'):
 			id = req.GET.get('id')
-			cargo = Cargo.objects.filter(id=id)
-			return JsonResponse(cargo)
+			cargo = Cargo.objects.filter(id=id).values()
+			print(cargo)
+			return JsonResponse(list(cargo), safe=False)
 		else:
-			cargo_list = Cargo.objects.all().value()
+			cargo_list = Cargo.objects.all().values()
 			return JsonResponse(list(cargo_list), safe=False)
 	if req.method == 'POST':
 		try :
@@ -91,7 +92,7 @@ def cargo(req):
 				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable)
 				return JsonResponse({'created': True})
 			else:
-				Cargo.objects.create(id=id, tiltable=tiltable, stackable=stackable)
+				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable)
 				Group('cam').send({'text': '{"id" :"' + id + '",\
 											"take_picture": True}'})
 				return JsonResponse({'created': True})
@@ -114,8 +115,11 @@ def picture(req):
 		image = req.FILES['image']
 		id = parse(req.POST['id'])
 		imgpath = saveImage(id, image)
+		cargo = list(Cargo.objects.filter(id=id).values())[0]
+		print(cargo)
+		height = json.loads(cargo['dims'])[0]
 		#TODO: change to real calculateDims
-		res = calculateDims(imgpath)
+		res = calculateDims(imgpath, height)
 		#TODO: update entry in database with calculated dimensions
 		print("Response: ", res)
 		Group('staff').send({'text': json.dumps({'status': 'done'})}, immediately=True)
