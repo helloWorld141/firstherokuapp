@@ -48,13 +48,11 @@
     <script>
       //Request data
       function generateHTML(sampleJson) {
-        var sampleJson = [{ id: "1401", dims: "", stackable: null, tiltable: null, image: "", crops: "[]" }];
-        console.log(sampleJson.length);
         //Generate HTML string
         var ht=[];
         ht.push('<thead> <tr>');
         var headers =  ["ID", "Stackable", "Tiltable", "Volumne", "Shape", "# of pieces"];
-        var jsonKeys = ["id", "stackable", "tiltable", "volumne", "shape", "num"];
+        var jsonKeys = ["id", "stackable", "tiltable", "volumne", "shape", "pieces"];
         for (i=0; i<headers.length; i++) {
           ht.push('<th scope="col">'+headers[i]+"</th>");
         }
@@ -85,7 +83,8 @@
         xmlHttp.send(null);
       }
 
-      httpGetAsync("http://54.251.191.230/api/cargo");
+      // httpGetAsync("http://54.251.191.230/api/cargo");
+      generateHTML([{"stackable": null, "crops": "[]", "dims": "", "image": "", "id": "1401", "tiltable": null}, {"stackable": true, "crops": "", "dims": "[1,2,3]", "image": "", "id": "1", "tiltable": true}, {"stackable": true, "crops": "", "dims": "[1,2,3]", "image": "", "id": "2", "tiltable": true}, {"stackable": true, "crops": "", "dims": "[1,2,3]", "image": "", "id": "3", "tiltable": true}, {"stackable": false, "crops": "", "dims": "[1,2,3]", "image": "", "id": "4", "tiltable": false}, {"stackable": false, "crops": "", "dims": "[1,2,3]", "image": "", "id": "5", "tiltable": false}]);
 
       //Web socket
       // var socket = new WebSocket('ws://54.251.191.230/staff/');

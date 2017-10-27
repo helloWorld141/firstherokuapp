@@ -8,3 +8,4 @@ class Cargo(models.Model):
 	tiltable = models.NullBooleanField(null=True)
 	image = models.ImageField()
 	crops = models.CharField(max_length=255)
+	pieces = models.IntegerField(null=True)

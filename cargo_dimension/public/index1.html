@@ -46,27 +46,24 @@
           </div>
         </div>
         <div class="form-group row">
-           <label for="dimension" class="col-sm-2 col-form-label">Dimension</label>
-           <div class="col">
-             <input type="number" class="form-control" id="height" placeholder="Height (required)" required="">
-             <div class="invalid-feedback">
-               Height is required.
-             </div>
-           </div>
-           <div class="col"><input type="number" class="form-control" id="width" placeholder="Width"></div>
-           <div class="col"><input type="number" class="form-control" id="length" placeholder="Length"></div>
+          <label for="dimension" class="col-sm-2 col-form-label">Height</label>
+          <div class="col">
+            <input type="number" class="form-control" id="height" placeholder="Enter Height (required)" required="">
+            <div class="invalid-feedback">
+              Height is required.
+            </div>
           </div>
-        <div class="form-group row">
+          </div>
+          <div class="form-group row">
           <label for="type" class="col-sm-2 col-form-label">Type</label>
           <div class="col"><button type="button" class="btn btn-outline-secondary btn-block type-buttons" id="stackable">Stackable</button></div>
           <div class="col"><button type="button" class="btn btn-outline-secondary btn-block type-buttons" id="tiltable" >Tiltable</button></div>
+
+          <!-- <div class="col"><input type="number" class="form-control" id="width" placeholder="Width"></div>
+          <div class="col"><input type="number" class="form-control" id="length" placeholder="Length"></div> -->
         </div>
-        <div class="form-group row">
-          <label for="pieces" class="col-sm-2 col-form-label">Number of pieces</label>
-          <div class="col"><input type="number" class="form-control" id="pieces" placeholder="Enter number of pieces"></div>
-        </div>
-        <small id="dimensionHelp" class="form-text text-muted">Leave the width and length blank to use the cameras for automated dimension measurement.</small>
-        <br>
+        <!-- <small id="dimensionHelp" class="form-text text-muted">Leave the width and length blank to use the cameras for automated dimension measurement.</small>
+        <br> -->
         <br>
         <button type="submit" class="btn btn-primary btn-lg btn-block">Add new cargo!</button>
       </form>
@@ -95,8 +92,8 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script src="./static/js/cropper.min.js"></script>
-    <script src="./static/js/bootstrap-slider.min.js"></script>
+    <script src="/static/js/cropper.min.js"></script>
+    <script src="/static/js/bootstrap-slider.min.js"></script>
     <script>
       var socket = new WebSocket('ws://54.251.191.230/staff/');
 
@@ -137,7 +134,6 @@
               var height = $("#height").val();
               var width = $("#width").val();
               var length = $("#length").val();
-              var pieces = $("#pieces").val();
               var takePicture = (!$.isNumeric(width) || !$.isNumeric(length));
 
               var url = $(form).attr('action');
@@ -154,7 +150,7 @@
 
               //var socket = new WebSocket('ws://' + window.location.host + '/staff/');
 
-              $.post("http://54.251.191.230/api/cargo", data, function(data) {
+              $.post("https://54.251.191.230/api/cargo", data, function(data) {
                 console.log(data);
               });
 

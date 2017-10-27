@@ -14,3 +14,6 @@ def ws_connect(message, user):
 def ws_disconnect(message, user):
     Group(user).discard(message.reply_channel)
     Group(user).send({'close': True})
+
+def ws_receive(message, user):
+	print(message)
