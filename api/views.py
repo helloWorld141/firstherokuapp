@@ -86,9 +86,9 @@ def cargo(req):
 			id = req.POST.get('id', '1401')
 			print(id)
 			dimensions = json.loads(req.POST.get('dimensions'))
-			print(dimension)
+			print(dimensions)
 			tiltable = json.loads(req.POST.get('tiltable', 'false'))
-			print(titable)
+			print(tiltable)
 			stackable = json.loads(req.POST.get('stackable', 'false'))
 			print(stackable)
 			pieces = req.POST.get('remark', '1')
@@ -96,8 +96,8 @@ def cargo(req):
 			take_picture = json.loads(req.POST.get('take_picture', 'false'))
 			print(id, dimensions, tiltable, stackable, take_picture, pieces)
 			if not take_picture:
-				print('not taking picture')
-				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
+				print('not taking pictures')
+				Cargo.objects.create(id=id, tiltable=tiltable, stackable=stackable, pieces=pieces)
 				return JsonResponse({'created': True})
 			else:
 				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
