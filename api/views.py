@@ -136,7 +136,9 @@ def picture(req):
 		r = redis.Redis(host='localhost', port=6379, db=0)
 		t = r.hgetall(settings.REDIS_KEY)
 		if t.get('first_staff'):
-			return JsonResponse({"id": t.get('first_staff'),"take_picture": True})
+			id = t.get('first_staff')
+			r.hdel(settings.REDIS_KEY, first_staff)
+			return JsonResponse({"id": id,"take_picture": True})
 		else:
 			return JsonResponse({"take_picture": False})
 
