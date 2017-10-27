@@ -145,6 +145,7 @@
               var formData = new FormData(this);
 
               $.ajax({
+                url: window.location.pathname + '/api/cargo'
                 type: 'POST',
                 data: FormData,
                 success: function(data) {
