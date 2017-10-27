@@ -53,14 +53,14 @@
         ht.push('<thead> <tr>');
         var headers =  ["ID", "Stackable", "Tiltable", "Volumne", "Shape", "# of pieces"];
         var jsonKeys = ["id", "stackable", "tiltable", "volumne", "shape", "pieces"];
-        for (i=0; i<headers.length; i++) {
+        for (var i=0; i<headers.length; i++) {
           ht.push('<th scope="col">'+headers[i]+"</th>");
         }
         ht.push('</tr> </thead>');
         ht.push('<tbody>');
-        for (i=0; i<sampleJson.length; i++) {
+        for (var i=0; i<sampleJson.length; i++) {
           ht.push('<tr class="clickable-row"  data-href="">');
-          for (j=0; j<jsonKeys.length; j++) {
+          for (var j=0; j<jsonKeys.length; j++) {
             ht.push('<td>'+sampleJson[i][jsonKeys[j]]+'</td>');
           }
           ht.push('</tr>');
@@ -77,7 +77,7 @@
         xmlHttp.onreadystatechange = function() {
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
               console.log(xmlHttp.responseText);
-              generateHTML(JSON.stringify(xmlHttp.responseText));
+              generateHTML(xmlHttp.responseText);
             }
         }
         xmlHttp.open("GET", theUrl, true); // true for asynchronous
