@@ -27,9 +27,16 @@ def unpackRect(tl, tr, br, bl):
 		"botleft": botleft
 	}
 
-def calculateDims(args):
+def calculateDims(imagePath, objHeight):
+	width = 122.6
+	camHeight = 110.7
+	image = cv2.imread(imagePath)
+	image = cv2.resize(image, (600, 600))
+	image = image[0:400, 50:599]
 	# load the image, convert it to grayscale, and blur it slightly
-	image = cv2.imread(args["image"])
+
+	# crop the image
+	# image = image[0:300, 0:599]
 	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 	gray = cv2.GaussianBlur(gray, (7, 7), 0)
 
@@ -42,6 +49,7 @@ def calculateDims(args):
 	# find contours in the edge map
 	cnts = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL,
 		cv2.CHAIN_APPROX_SIMPLE)
+
 	cnts = cnts[0] if imutils.is_cv2() else cnts[1]
 
 	# sort the contours from left-to-right and initialize the
@@ -49,83 +57,121 @@ def calculateDims(args):
 	(cnts, _) = contours.sort_contours(cnts)
 	pixelsPerMetric = None
 
-	res = []
-	# loop over the contours individually
+	best_contour = cnts[0]	
+	best_contour_area = cv2.contourArea(best_contour)
+
+	# find the biggest contour
 	for c in cnts:
-		"""
-		schema of obj:
-			tl: number
-			tr: number
-			br: number
-			bl: number
-			dims: list
-		"""
-		obj = {}
-		# if the contour is not sufficiently large, ignore it
-		if cv2.contourArea(c) < 100:
-			continue
+		next_contour_area = cv2.contourArea(c)
+		if(next_contour_area > best_contour_area):
+			best_contour = c
+			best_contour_area = next_contour_area 
 
-		orig = image.copy()
-		box = cv2.minAreaRect(c)
-		box = cv2.cv.BoxPoints(box) if imutils.is_cv2() else cv2.boxPoints(box)
-		box = np.array(box, dtype="int")
-		
-		box = perspective.order_points(box)
-		cv2.drawContours(orig, [box.astype("int")], -1, (0, 255, 0), 2)
 
+	# loop over the contours individually
+	# for c in cnts:
+
+	# if the contour is not sufficiently large, ignore it
+	# if cv2.contourArea(c) < cv2.contourArea(c) < 100:
+	# 	continue
+
+
+	# compute the rotated bounding box of the contour
+	orig = image.copy()	
+	box = cv2.minAreaRect(best_contour)
+	box = cv2.cv.BoxPoints(box) if imutils.is_cv2() else cv2.boxPoints(box)
+	box = np.array(box, dtype="int")
+
+
+
+	# order the points in the contour such that they appear
+	# in top-left, top-right, bottom-right, and bottom-left
+	# order, then draw the outline of the rotated bounding
+	# box
+	box = perspective.order_points(box)
+
+
+	# we will identify if the contour is rectangle or circle
+	peri = cv2.arcLength(best_contour, True)
+	approx = cv2.approxPolyDP(best_contour, 0.04 * peri, True)
+	if(len(approx) == 4):
+		print("RECTANGLE")
+		# loop over the original points and draw them
 		for (x, y) in box:
 			cv2.circle(orig, (int(x), int(y)), 5, (0, 0, 255), -1)
-			
-		(tl, tr, br, bl) = box
-		obj = unpackRect(tl, tr, br, bl)
-		obj['dims'] = []
-		(tltrX, tltrY) = midpoint(tl, tr)
-		(blbrX, blbrY) = midpoint(bl, br)
+			cv2.drawContours(orig, [box.astype("int")], -1, (0, 255, 0), 2)
+	else:
+		print("CIRCLE")
+		(x,y),radius = cv2.minEnclosingCircle(c)
+		center = (int(x),int(y))
+		radius = int(radius)
+		cv2.drawContours(orig, [c], -1, (0, 255, 0), 2)
 
-		(tlblX, tlblY) = midpoint(tl, bl)
-		(trbrX, trbrY) = midpoint(tr, br)
+	# unpack the ordered bounding box, then compute thenhe midpoint
+	# between the top-left and top-right coordinates, followed by
+	# the midpoint between bottom-left and bottom-right coordinates
+	(tl, tr, br, bl) = box
+	(tltrX, tltrY) = midpoint(tl, tr)
+	(blbrX, blbrY) = midpoint(bl, br)
 
-		cv2.circle(orig, (int(tltrX), int(tltrY)), 5, (255, 0, 0), -1)
-		cv2.circle(orig, (int(blbrX), int(blbrY)), 5, (255, 0, 0), -1)
-		cv2.circle(orig, (int(tlblX), int(tlblY)), 5, (255, 0, 0), -1)
-		cv2.circle(orig, (int(trbrX), int(trbrY)), 5, (255, 0, 0), -1)
+	# compute the midpoint between the top-left and top-right points,
+	# followed by the midpoint between the top-righ and bottom-right
+	(tlblX, tlblY) = midpoint(tl, bl)
+	(trbrX, trbrY) = midpoint(tr, br)
 
-		cv2.line(orig, (int(tltrX), int(tltrY)), (int(blbrX), int(blbrY)),
-			(255, 0, 255), 2)
-		cv2.line(orig, (int(tlblX), int(tlblY)), (int(trbrX), int(trbrY)),
-			(255, 0, 255), 2)
+	# draw the midpoints on the image
+	cv2.circle(orig, (int(tltrX), int(tltrY)), 5, (255, 0, 0), -1)
+	cv2.circle(orig, (int(blbrX), int(blbrY)), 5, (255, 0, 0), -1)
+	cv2.circle(orig, (int(tlblX), int(tlblY)), 5, (255, 0, 0), -1)
+	cv2.circle(orig, (int(trbrX), int(trbrY)), 5, (255, 0, 0), -1)
 
-		dA = dist.euclidean((tltrX, tltrY), (blbrX, blbrY))
-		dB = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
+	# draw lines between the midpoints
+	cv2.line(orig, (int(tltrX), int(tltrY)), (int(blbrX), int(blbrY)),
+		(255, 0, 255), 2)
+	cv2.line(orig, (int(tlblX), int(tlblY)), (int(trbrX), int(trbrY)),
+		(255, 0, 255), 2)
 
-		if pixelsPerMetric is None:
-			pixelsPerMetric = dB / float(args["width"])
+	# compute the Euclidean distance between the midpoints
+	dA = dist.euclidean((tltrX, tltrY), (blbrX, blbrY))
+	dB = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
 
-		dimA = dA / pixelsPerMetric
-		dimB = dB / pixelsPerMetric
+	# if the pixels per metric has not been initialized, then
+	# compute it as the ratio of pixels to supplied metric
+	# (in this case, inches)
+	# if pixelsPerMetric is None:
+	# 	args["height"]
+	# 	frameWidth = image.shape[1];
+	# 	pixelsPerMetric = frameWidth / args["width"]
+	# 	dimA = 
 
-		obj['dims'].append(dimA)
-		obj['dims'].append(dimB)
+	# compute the size of the object
 
-		cv2.putText(orig, "{:.1f}in".format(dimA),
-			(int(tltrX - 15), int(tltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX,
-			0.65, (255, 255, 255), 2)
-		cv2.putText(orig, "{:.1f}in".format(dimB),
-			(int(trbrX + 10), int(trbrY)), cv2.FONT_HERSHEY_SIMPLEX,
-			0.65, (255, 255, 255), 2)
+	# dimA = dA / pixelsPerMetric
+	# dimB = dB / pixelsPerMetric
+	dimA = dA * (camHeight - objHeight) / (objHeight)
+	dimB = dB * (camHeight - objHeight) / (objHeight)
 
-		res.append(obj)
-		# show the output image
-		#cv2.imshow("Image", orig)
-		#cv2.waitKey(0)
-	return res
+	# draw the object sizes on the image
+	cv2.putText(orig, "{:.1f}in".format(dimB),
+		(int(tltrX - 15), int(tltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX,
+		0.65, (255, 255, 255), 2)
+	cv2.putText(orig, "{:.1f}in".format(dimA),
+		(int(trbrX + 10), int(trbrY)), cv2.FONT_HERSHEY_SIMPLEX,
+		0.65, (255, 255, 255), 2)
+	# cv2.namedWindow('image', cv2.WINDOW_NORMAL)
+	# cv2.resizeWindow('image', 600, 600)
+	# show the output image
+	cv2.imshow("Image", orig)
+	cv2.waitKey(0)
+	result = {"crop": list(box), "width": dimA, "height": dimB}
+	return result
 
 if __name__ == "__main__":
 	# construct the argument parse and parse the arguments
 	ap = argparse.ArgumentParser()
 	ap.add_argument("-i", "--image", required=True,
 		help="path to the input image")
-	ap.add_argument("-w", "--width", type=float, required=True,
-		help="width of the left-most object in the image (in inches)")
+	ap.add_argument("-w", "--height", type=float, required=True,
+		help="height of object")
 	args = vars(ap.parse_args())
-	calculateDims(args)
+	calculateDims(args['image'], args['height'])

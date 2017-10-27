@@ -4,6 +4,7 @@
 
 {% block script %}
   <script>
+    console.log('ws://' + window.location.host + '/cam/')
     var socket = new WebSocket('ws://' + window.location.host + '/cam/');
 
     socket.onopen = function open() {
