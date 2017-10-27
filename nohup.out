@@ -1305,3 +1305,99 @@ Traceback (most recent call last):
 PermissionError: [Errno 13] Permission denied: '/home/ubuntu/firstherokuapp/api/resource/img/4'
 Not Found: /favicon.ico
 Not Found: /favicon.ico
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 27, 2017 - 13:08:48
+Django version 1.11.6, using settings 'cargo_dimension.settings'
+Starting Channels development server at http://127.0.0.1:8000/
+Channel layer default (asgi_redis.core.RedisChannelLayer)
+Quit the server with CONTROL-C.
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+User group connected:  staff
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+User group connected:  staff
+<AsgiRequest: POST '/api/picture'>
+Reqest:  <MultiValueDict: {'image': [<InMemoryUploadedFile: image (null)>]}> <QueryDict: {'id': ['4\r\nid: 4']}>
+<class 'django.core.files.uploadedfile.InMemoryUploadedFile'>
+['4', 'id: 4']
+{'image': '', 'stackable': True, 'crops': '', 'dims': '[1,2,3]', 'id': '4', 'tiltable': False, 'pieces': 2}
+User group connected:  staff
+User group connected:  staff
+dsfkjh None True True False 1
+not taking picture
+2017-10-27 13:30:09,677 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:30:09,679 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:30:09,682 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:30:09,682 - INFO - worker - Listening on channels http.request, websocket.connect, websocket.disconnect, websocket.receive
+2017-10-27 13:30:09,683 - INFO - server - HTTP/2 support enabled
+2017-10-27 13:30:09,683 - INFO - server - Using busy-loop synchronous mode on channel layer
+2017-10-27 13:30:09,683 - INFO - server - Listening on endpoint tcp:port=8000:interface=127.0.0.1
