@@ -82,11 +82,17 @@ def cargo(req):
 			return JsonResponse(list(cargo_list), safe=False)
 	if req.method == 'POST':
 		try :
+			print(req)
 			id = req.POST.get('id', '1401')
+			print(id)
 			dimensions = json.loads(req.POST.get('dimensions'))
+			print(dimension)
 			tiltable = json.loads(req.POST.get('tiltable', 'false'))
+			print(titable)
 			stackable = json.loads(req.POST.get('stackable', 'false'))
+			print(stackable)
 			pieces = req.POST.get('remark', '1')
+			print(pieces)
 			take_picture = json.loads(req.POST.get('take_picture', 'false'))
 			print(id, dimensions, tiltable, stackable, take_picture, pieces)
 			if not take_picture:
@@ -95,8 +101,9 @@ def cargo(req):
 				return JsonResponse({'created': True})
 			else:
 				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
-				image = json.FILES['picture']
-				print(image)
+				print(req)
+				#image = req.FILES['picture']
+				#print(image)
 				r = redis.Redis(host='localhost', port=6379, db=0)
 				r.hset(settings.REDIS_KEY, "first_staff", id)
 				Group('cam').send({'text': '{"id" :"' + id + '",\
