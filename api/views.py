@@ -138,7 +138,7 @@ def picture(req):
 		print(t)
 		if t.get(b'first_staff'):
 			id = t.get(b'first_staff').decode('utf-8')
-			r.hdel(settings.REDIS_KEY, first_staff)
+			r.hdel(settings.REDIS_KEY, b'first_staff')
 			return JsonResponse({"id": id,"take_picture": True})
 		else:
 			return JsonResponse({"take_picture": False})
