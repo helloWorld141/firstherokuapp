@@ -86,9 +86,9 @@ def cargo(req):
 			id = req.POST.get('id', '1401')
 			print(id)
 			dimensions = json.loads(req.POST.get('dimensions'))
-			print(dimension)
+			print(dimensions)
 			tiltable = json.loads(req.POST.get('tiltable', 'false'))
-			print(titable)
+			print(tiltable)
 			stackable = json.loads(req.POST.get('stackable', 'false'))
 			print(stackable)
 			pieces = req.POST.get('remark', '1')
@@ -108,7 +108,7 @@ def cargo(req):
 				r.hset(settings.REDIS_KEY, "first_staff", id)
 				Group('cam').send({'text': '{"id" :"' + id + '",\
 											"take_picture": True}'})
-				return JsonResponse({'created': True})
+				return JsonResponse({'created': True, 'request': req.POST})
 		except:
 			e = sys.exc_info()
 			print(e)
