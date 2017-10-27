@@ -113,7 +113,7 @@
               "stackable": $("#stackable").hasClass("btn-primary") ? true : false,
               "tiltable": $("#tiltable").hasClass("btn-primary") ? true : false,
               "take_picture": takePicture,
-              "dimensions": [height, width, length],
+              "dimensions": JSON.stringify([height, width, length]),
               "remark": remark
             };
 
