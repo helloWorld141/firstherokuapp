@@ -58,8 +58,8 @@
           </div>
         <div class="form-group row">
           <label for="type" class="col-sm-2 col-form-label">Type</label>
-          <div class="col"><input type="button" class="btn btn-outline-secondary btn-block type-buttons" id="stackable" value="Stackable"></input></div>
-          <div class="col"><input type="button" class="btn btn-outline-secondary btn-block type-buttons" id="tiltable" value="Tiltable"></input></div>
+          <div class="col"><button type="button" class="btn btn-outline-secondary btn-block type-buttons" id="stackable">Stackable</button></div>
+          <div class="col"><button type="button" class="btn btn-outline-secondary btn-block type-buttons" id="tiltable" >Tiltable</button></div>
         </div>
         <div class="form-group row">
           <label for="remark" class="col-sm-2 col-form-label">Remark</label>
@@ -145,6 +145,7 @@
               var formData = new FormData(this);
 
               $.ajax({
+                url: 'http://54.251.191.230/api/cargo',
                 type: 'POST',
                 data: FormData,
                 success: function(data) {
@@ -178,7 +179,7 @@
           }
         }, false);
 
-        var typeButtons = document.querySelectorAll("input.type-buttons");
+        var typeButtons = document.querySelectorAll("button.type-buttons");
         typeButtons.forEach(function(node) {
           node.addEventListener('click', function(event) {
             event.preventDefault();
