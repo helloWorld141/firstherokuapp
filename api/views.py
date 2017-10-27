@@ -135,8 +135,9 @@ def picture(req):
 	else:
 		r = redis.Redis(host='localhost', port=6379, db=0)
 		t = r.hgetall(settings.REDIS_KEY)
-		if t.get('first_staff'):
-			id = t.get('first_staff')
+		print(t)
+		if t.get(b'first_staff'):
+			id = t.get(b'first_staff').decode('utf-8')
 			r.hdel(settings.REDIS_KEY, first_staff)
 			return JsonResponse({"id": id,"take_picture": True})
 		else:
