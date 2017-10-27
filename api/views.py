@@ -95,7 +95,7 @@ def cargo(req):
 				return JsonResponse({'created': True})
 			else:
 				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
-				image = json.FILES['image']
+				image = json.FILES['picture']
 				print(image)
 				r = redis.Redis(host='localhost', port=6379, db=0)
 				r.hset(settings.REDIS_KEY, "first_staff", id)
