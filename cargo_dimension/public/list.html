@@ -67,7 +67,7 @@
         }
         ht.push('</tbody>');
         ht = ht.join("");
-        console.log(ht);
+        //console.log(ht);
         //Replace
         document.getElementById('tableArea').innerHTML = ht;
       }
@@ -75,9 +75,10 @@
       function httpGetAsync(theUrl) {
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function() {
-            if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
               console.log(xmlHttp.responseText);
               generateHTML(JSON.stringify(xmlHttp.responseText));
+            }
         }
         xmlHttp.open("GET", theUrl, true); // true for asynchronous
         xmlHttp.send(null);
