@@ -38,7 +38,7 @@ def calculateDims(imagePath, objHeight):
 	# load the image, convert it to grayscale, and blur it slightly
 
 	# crop the image
-	image = image[int( 0.3 * image.shape[0] ) : (image.shape[0] - 4), 0: (image.shape[1] - 4)]
+	image = image[int( 0.25 * image.shape[0] ) : (image.shape[0] - 4), 0: (image.shape[1] - 4)]
 	# gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 	gray = cv2.GaussianBlur(image, (7, 7), 0)
 
