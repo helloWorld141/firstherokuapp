@@ -99,12 +99,17 @@
 
       window.addEventListener('load', function() {
 
-        var form = $('#cargo-form');
-        form.submit(function(event) {
+      $("#picture").change(function(e) {
+        console.log(e);
+        console.log(e.originalEvent.srcElement.files);
+      });
+
+        var form = document.getElementById('cargo-form');
+        form.addEventListener('submit', function(event) {
           event.preventDefault();
-          if (this.checkValidity() === false) {
+          if (form.checkValidity() === false) {
             event.stopPropagation();
-            this.classList.add('was-validated');
+            form.classList.add('was-validated');
           } else {
             var height = $("#height").val();
             var length = $("#length").val();
@@ -126,31 +131,25 @@
 
               console.log(data);
 
+              $.post("http://54.251.191.230/api/cargo", data, function(data) {
+                console.log(data);
+              });
+
               this.reset();
               typeButtons.forEach(function(node) {
                 $(node).removeClass("btn-primary");
                 $(node).addClass("btn-outline-secondary");
               });
-              this.classList.remove('was-validated');
+              form.classList.remove('was-validated');
             } else if (picture !== "") {
+              var formData = new FormData(this);
 
-              var formData = new FormData();
-
-              formData.append('id', $("#cargo-id").val());
-              formData.append('stackable', $("#stackable").hasClass("btn-primary") ? true : false);
-              formData.append('tiltable', $("#tiltable").hasClass("btn-primary") ? true : false);
-              formData.append('take_picture', false);
-              formData.append('dimensions', JSON.stringify(dimensions));
-              formData.append('remark', remark);
-              formData.append('picture', document.getElementById('picture').files[0]);
-
-              console.log(formData);
               $.ajax({
-		url: "http://54.251.191.230/api/cargo",
+                url: "http://54.251.191.230/api/cargo",
                 type: 'POST',
-                data: formData,
+                data: FormData,
                 success: function(data) {
-                  console.log(data);
+                  alert(data);
                 },
                 cache: false,
                 contentType: false,
@@ -173,12 +172,12 @@
                 $(node).removeClass("btn-primary");
                 $(node).addClass("btn-outline-secondary");
               });
-              this.classList.remove('was-validated');
+              form.classList.remove('was-validated');
             } else {
               //todo
             }
           }
-        });
+        }, false);
 
         var typeButtons = document.querySelectorAll("input.type-buttons");
         typeButtons.forEach(function(node) {
