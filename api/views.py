@@ -100,16 +100,19 @@ def cargo(req):
 				cargo = Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
 				return JsonResponse({'created': True, 'cargo': cargo})
 			else:
-				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
 				print(req)
 				image = req.FILES['picture']
 				print(image)
 				imgpath = saveImage(id, image)
 				print(imgpath)
+				height = int(dimensions[0])
 				#r = redis.Redis(host='localhost', port=6379, db=0)
 				#r.hset(settings.REDIS_KEY, "first_staff", id)
 				#Group('cam').send({'text': '{"id" :"' + id + '",\
 				#							"take_picture": True}'})
+				res = calculateDims(imgpath, height)
+				print(res)
+				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
 				return JsonResponse({'created': True,
 										'request': req.POST})
 		except:
