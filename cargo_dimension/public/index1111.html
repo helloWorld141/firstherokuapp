@@ -142,29 +142,21 @@
               });
               form.classList.remove('was-validated');
             } else if (picture !== "") {
-              var formData = new FormData(this);
+              var data = {
+                "id": $("#cargo-id").val(), 
+                "stackable": $("#stackable").hasClass("btn-primary") ? true : false,
+                "tiltable": $("#tiltable").hasClass("btn-primary") ? true : false,
+                "take_picture": true,
+                "dimensions": JSON.stringify(dimensions),
+                "remark": remark,
+                "picture": document.getElementById('picture').files[0]
+              }
 
-              $.ajax({
-                type: 'POST',
-                data: FormData,
-                success: function(data) {
-                  alert(data);
-                },
-                cache: false,
-                contentType: false,
-                processData: false
+              console.log(data);
+
+              $.post("http://54.251.191.230/api/cargo", data, function(data) {
+                console.log(data);
               });
-
-              // var data = {
-              //   "id": $("#cargo-id").val(), 
-              //   "stackable": $("#stackable").hasClass("btn-primary") ? true : false,
-              //   "tiltable": $("#tiltable").hasClass("btn-primary") ? true : false,
-              //   "take_picture": true,
-              //   "dimensions": JSON.stringify(dimensions),
-              //   "remark": remark,
-              //   "picture": document.getElementById('picture').files[0]
-              // }
-
 
               this.reset();
               typeButtons.forEach(function(node) {
@@ -173,7 +165,7 @@
               });
               form.classList.remove('was-validated');
             } else {
-              //todo
+
             }
           }
         }, false);
