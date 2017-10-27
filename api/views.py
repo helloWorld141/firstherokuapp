@@ -111,8 +111,11 @@ def cargo(req):
 				#Group('cam').send({'text': '{"id" :"' + id + '",\
 				#							"take_picture": True}'})
 				res = calculateDims(imgpath, height)
-				print(res)
-				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
+				dims = [height]
+				dims.append(res['length'])
+				dims.append(res['width'])
+				type_ = res.get('type', "CUBOID")
+				Cargo.objects.create(id=id, dims=dims, tiltable=tiltable, stackable=stackable, pieces=pieces, type=type_)
 				return JsonResponse({'created': True,
 										'request': req.POST})
 		except:
