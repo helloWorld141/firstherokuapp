@@ -8,6 +8,7 @@ from django.shortcuts import render
 from channels import Group
 from django.conf import settings
 from api.models import Cargo
+import redis
 
 path = os.path.dirname(os.path.abspath(__file__))
 hostname = settings.HOST
@@ -94,6 +95,8 @@ def cargo(req):
 				return JsonResponse({'created': True})
 			else:
 				Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
+				r = redis.Redis(host='localhost', port=6379, db=0)
+				r.hset(settings.REDIS_KEY, "first_staff", id)
 				Group('cam').send({'text': '{"id" :"' + id + '",\
 											"take_picture": True}'})
 				return JsonResponse({'created': True})
@@ -129,8 +132,13 @@ def picture(req):
 		print("Response: ", res)
 		Group('staff').send({'text': json.dumps({'status': 'done'})}, immediately=True)
 		return JsonResponse(res)
-	else: 
-		return JsonResponse({})
+	else:
+		r = redis.Redis(host='localhost', port=6379, db=0)
+		t = r.hgetall(settings.REDIS_KEY)
+		if t.get('first_staff'):
+			return JsonResponse({"id": t.get('first_staff'),"take_picture": True})
+		else:
+			return JsonResponse({"take_picture": False})
 
 def calculateDims2(picture):
 	return {"crop" : [[0,1],[1,1],[1,0],[0,0]],

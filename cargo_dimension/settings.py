@@ -138,3 +138,4 @@ CHANNEL_LAYERS = {
 }
 
 HOST = 'localhost:8000'
+REDIS_KEY = 'picture_key'
