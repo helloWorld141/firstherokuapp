@@ -111,7 +111,7 @@ def cargo(req):
 				#Group('cam').send({'text': '{"id" :"' + id + '",\
 				#							"take_picture": True}'})
 				res = calculateDims(imgpath, height)
-				print("Result", res)=
+				print("Result", res)
 				dims = [height]
 				dims.append(res['length'])
 				dims.append(res['width'])
