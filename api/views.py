@@ -96,8 +96,11 @@ def cargo(req):
 			take_picture = json.loads(req.POST.get('take_picture', 'false'))
 			print(id, dimensions, tiltable, stackable, take_picture, pieces)
 			if not take_picture:
+				dims = []
+				for dim in dimensions:
+					dims.append(float(dim))
 				print('not taking pictures')
-				cargo = Cargo.objects.create(id=id, dims=dimensions, tiltable=tiltable, stackable=stackable, pieces=pieces)
+				cargo = Cargo.objects.create(id=id, dims=dims, tiltable=tiltable, stackable=stackable, pieces=pieces)
 				return JsonResponse({'created': True, 'cargo': cargo})
 			else:
 				print(req)
@@ -105,7 +108,7 @@ def cargo(req):
 				print(image)
 				imgpath = saveImage(id, image)
 				print(imgpath)
-				height = int(dimensions[0])
+				height = float(dimensions[0])
 				#r = redis.Redis(host='localhost', port=6379, db=0)
 				#r.hset(settings.REDIS_KEY, "first_staff", id)
 				#Group('cam').send({'text': '{"id" :"' + id + '",\
